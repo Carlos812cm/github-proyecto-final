@@ -1,0 +1,22 @@
+name: CI básica
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  validacion:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Mostrar archivos
+        run: ls -la
+
+      - name: Validación básica
+        run: echo "La CI del proyecto final se ejecutó correctamente"
